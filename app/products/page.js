@@ -23,18 +23,18 @@
 // }
 'use client'
 
-import { useState , useEffect} from 'react'
+import { useState, useEffect } from 'react'
 
-async function getBlogs(){
+async function getBlogs() {
     const res = await fetch("https://dummyjson.com/products?limit=12")
 
-    if(!res.ok){
-    throw new Error('cannot fetch ')
+    if (!res.ok) {
+        throw new Error('cannot fetch ')
     }
     return res.json()
 }
 
-export default function Page(){
+export default function Page() {
 
     const [blogState, setBlogState] = useState([]);
 
@@ -42,7 +42,7 @@ export default function Page(){
         try {
             const result = await getBlogs()
             setBlogState(result)
-        }catch (error) {
+        } catch (error) {
             console.log('error', error)
         }
     }
