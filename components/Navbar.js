@@ -40,7 +40,7 @@ export default function Index() {
                         <li><Link className="text-white" href="/about">ABOUT</Link></li>
                         <li><Link className="text-white" href="/products">PRODUCTS</Link></li>
                     </ul>
-                ) : null }
+                ) : null}
             </nav>
         </>
     )
