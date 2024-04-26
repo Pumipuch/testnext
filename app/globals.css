@@ -3,9 +3,9 @@
 @tailwind utilities;
 
 body {
-    background: yellowgreen;
+    background: rgb(214, 252, 137);
     color: blue;
 }
 nav a:hover {
-    color: aliceblue;
+    color: rgb(233, 249, 9);
 }
