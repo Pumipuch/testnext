@@ -1,31 +1,9 @@
-
-// async function getStaticProps(){
-//     const res = await fetch("https://dummyjson.com/products?limit=12")
-//     const data = res.json()
-//     console.log(data)
-//     return {
-//         props: {products:data.products}
-//     }
-// }
-
-// export default function Home({products}){
-//     return (
-//         <>
-//         <div>
-//             {products && products.map(item=>(
-//                 <div key={item.id}>
-//                     <h2>{item.title}</h2>
-//                 </div>
-//             ))}
-//         </div>
-//         </>
-//     )
-// }
 'use client'
 
+import Link from 'next/link'
 import { useState, useEffect } from 'react'
 
-async function getBlogs() {
+async function getData() {
     const res = await fetch("https://dummyjson.com/products?limit=12")
 
     if (!res.ok) {
@@ -36,12 +14,12 @@ async function getBlogs() {
 
 export default function Page() {
 
-    const [blogState, setBlogState] = useState([]);
+    const [dataState, setDataState] = useState([]);
 
     const initBlog = async () => {
         try {
-            const result = await getBlogs()
-            setBlogState(result)
+            const result = await getData()
+            setDataState(result.products)
         } catch (error) {
             console.log('error', error)
         }
@@ -49,20 +27,22 @@ export default function Page() {
 
     useEffect(() => {
         initBlog()
-        console.log('use effect')
+        //console.log('use effect')
     }, [])
 
-    console.log(blogState)
+    //console.log(dataState)
 
     return (
         <div>
-            {/* {
-            blogState.map((blog, index) => (
-                <div key={index}>
-                   {blog.id} {blog.title}
-
-                </div>
-            ))} */}
+            <h1>fetch API "useClient"</h1>
+            {
+                dataState.map((pd, index) => (
+                    <div key={index}>
+                        {pd.id} {pd.title}
+                    </div>
+                ))
+            }
+            <div><div className="flex justify-center "><Link href="/products2" className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-full animate-bounce">fetch API "useServer"</Link></div></div>
         </div>
     )
 }
