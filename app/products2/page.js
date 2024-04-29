@@ -1,7 +1,7 @@
 import Link from "next/link"
 
 async function getdata() {
-    const res = await fetch("https://dummyjson.com/products?limit=12")
+    const res = await fetch("https://dummyjson.com/products?limit=10")
 
     if (!res.ok) {
         throw new Error('cannot fetch ')
