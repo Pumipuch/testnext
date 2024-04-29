@@ -23,7 +23,7 @@ export default async function Page({ params }) {
                     <div>
                         <div className="flex justify-center p-3 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 rounded-md text-white text-4xl">{data.title}</div>
 
-                        <div className="flex justify-center m-4"><img className="rounded-lg m-2 w-[400px] h-[400px]" src={data.thumbnail} alt={data.id}></img></div>
+                        <div className="flex justify-center m-4"><img className="rounded-lg m-2 w-[300px] h-[300px]" src={data.thumbnail} alt={data.id}></img></div>
 
                         <div className="flex justify-center m-4 text-lg ">{data.description}</div>
 
