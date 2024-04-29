@@ -12,9 +12,9 @@ export default function Index() {
 
     return (
         <>
-            <nav className="bg-blue-500 p-1 sticky top-0">
+            <nav className="bg-gradient-to-r from-sky-500 to-indigo-500 p-1 sticky top-0">
                 <div className="flex items-center justify-between">
-                    <div><Link href="/"><img className="rounded-full m-2 hover:blur-sm " src="/her4.jpg" width={80} alt="logo"></img></Link></div>
+                    <div><Link href="/"><img className="rounded-full m-2 hover:blur-sm " src="/phone-logo.jpg" width={50} alt="logo"></img></Link></div>
 
                     {/* Toggle Menu Button */}
                     <div className="md:hidden">
